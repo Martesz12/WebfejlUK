@@ -1,0 +1,24 @@
+.div-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.main_component {
+  height: 100vh;
+}
+
+div{
+  margin: 10px;
+}
+button{
+  margin: 10px;
+}
+
+form{
+  display: inline-grid;
+  width: 50%;
+  align-self: center;
+}

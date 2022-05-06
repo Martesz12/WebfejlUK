@@ -1,0 +1,35 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-menu (selectedPage)="changePage($event)" [currentPage]="page" (onCloseSidenav)="onClose($event, sidenav)" [loggedInUser]="loggedInUser" (onLogout)="logout($event)"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>Utca Konyha</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li><a routerLink="/main">Főoldal</a></li>
+          <li><a routerLink="/forum">Fórum</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
+          <li *ngIf="!(loggedInUser)"><a routerLink="/register">Regisztráció</a></li>
+          <li *ngIf="(loggedInUser)"><a routerLink="/profile">Profil</a></li>
+          <li *ngIf="(loggedInUser)"><a routerLink="/favourite">Kedvencek</a></li>
+          <li *ngIf="(loggedInUser)"><a routerLink="/login" (click)="logout()">Kijelentkezés</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+<!-- *ngIf="" -->
+
+<!-- *ngFor="let obj of galleryObject" [ngValue]="obj"> {{obj.id}} -->
+<!-- [(ngModel)]="chosenImage"  FormsModul kell a .module.ts-be -->

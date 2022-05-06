@@ -1,0 +1,26 @@
+<div class="main_component">
+  <div class="div-flex">
+    <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+      <mat-form-field>
+        <mat-label for="comment">Hozzászólás szövege: </mat-label>
+        <textarea matInput rows="10" cols="80" type="text" id="comment" formControlName="comment"></textarea>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" type="submit">Küldés</button>
+      </div>
+    </form>
+
+
+    <div *ngIf="comments.length">
+      <mat-card *ngFor="let comment of comments; let i = index;" [ngStyle]="{'background-color' : i % 2 === 0 ? '#949393' : '#673ab6'}">
+        <mat-card-title>{{comment.username}}</mat-card-title>
+        <mat-card-subtitle>{{comment.date | dateFormat}}</mat-card-subtitle>
+        <mat-card-content>{{comment.comment}}</mat-card-content>
+      </mat-card>
+      <br>
+    </div>
+
+    <!--        &lt;!&ndash;  [ngStyle]="{'background-color' : i % 2 === 0 ? 'red' : 'blue'}"  &ndash;&gt;-->
+    <!--        <tr *ngFor="let comment of comments; let i = index;" [ngClass]="i % 2 === 0 ? 'table-header-even' : 'table-header-odd'">-->
+  </div>
+</div>

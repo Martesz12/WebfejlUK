@@ -1,0 +1,24 @@
+.div-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+div{
+  margin: 10px;
+}
+button{
+  margin: 10px;
+}
+
+.example-card {
+  max-width: 400px;
+  margin-left: 40px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

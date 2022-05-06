@@ -1,0 +1,37 @@
+.table-header-even{
+  background-color: #ab76ab;
+}
+
+.table-header-odd{
+  background-color: ghostwhite;
+}
+
+.div-flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+form{
+  display: inline-grid;
+  width: 50%;
+  align-self: center;
+}
+
+div{
+  margin: 10px;
+}
+button{
+  margin: 10px;
+}
+
+mat-card{
+  display: inline-grid;
+  width: 60%;
+  align-self: center;
+  text-align: left;
+  margin: 5px;
+}
+
