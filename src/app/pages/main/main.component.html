@@ -1,10 +1,10 @@
 <div class="main_component">
   <div class="div-flex">
-    <h1>Home page: Utca Konyha</h1>
+    <h1>Utca Konyha</h1>
 
     <div *ngFor="let recipe of recipes; let i = index;">
-      <div style="display: flex;">
-        <mat-card *ngIf="i !== 0 && i*3-3 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-3) % 2 === 0 ? 'card-even' : 'card-odd'">
+      <div *ngIf="i !== 0" style="display: flex;">
+        <mat-card *ngIf="i*3-3 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-3) % 2 === 0 ? 'card-even' : 'card-odd'">
           <mat-card-header>
             <mat-card-title>{{recipes[i*3-3].name}}</mat-card-title>
           </mat-card-header>
@@ -16,7 +16,7 @@
           </mat-card-actions>
         </mat-card>
 
-        <mat-card *ngIf="i*3-2 < recipes.length && i !== 0" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-2) % 2 === 0 ? 'card-even' : 'card-odd'">
+        <mat-card *ngIf="i*3-2 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-2) % 2 === 0 ? 'card-even' : 'card-odd'">
           <mat-card-header>
             <mat-card-title>{{recipes[i*3-2].name}}</mat-card-title>
           </mat-card-header>
@@ -28,7 +28,7 @@
           </mat-card-actions>
         </mat-card>
 
-        <mat-card *ngIf="i*3-1 < recipes.length && i !== 0" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-1) % 2 === 0 ? 'card-even' : 'card-odd'">
+        <mat-card *ngIf="i*3-1 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-1) % 2 === 0 ? 'card-even' : 'card-odd'">
           <mat-card-header>
             <mat-card-title>{{recipes[i*3-1].name}}</mat-card-title>
           </mat-card-header>
@@ -37,6 +37,44 @@
           </mat-card-content>
           <mat-card-actions>
             <button mat-raised-button color="primary" (click)="toRecipe(recipes[i*3-1].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
+      </div >
+
+      <div *ngIf="i === 0" style="display: flex;">
+        <mat-card *ngIf="i < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card *ngIf="i+1 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i+1) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i+1].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i+1].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i+1].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
+
+        <mat-card *ngIf="i+2 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i+2) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i+2].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i+2].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i+2].id)">Recept</button>
           </mat-card-actions>
         </mat-card>
       </div >

@@ -1,8 +1,23 @@
 <div class="div-flex">
-  <h2>{{recipe.name}}</h2>
-
-
-
+  <h1>{{recipe.name}}</h1>
+  <table>
+    <tr>
+      <td style="width: 25%">
+        <div>
+          <h2>Hozzávalók:</h2>
+          <mat-selection-list #ingredients>
+            <mat-list-option *ngFor="let ingredient of recipe.ingredients">
+              {{ingredient}}
+            </mat-list-option>
+          </mat-selection-list>
+        </div>
+      </td>
+      <td id="content">
+        <div id="short_description">{{recipe.short_description}}</div>
+        <div id="recipe">{{recipe.recipe}}</div>
+      </td>
+    </tr>
+  </table>
 </div>
 
 
