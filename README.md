@@ -1,28 +1,69 @@
 # WebfejlProjekt
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Szeretnék egy kis segítséget adni a pontozáshoz, leírtam, hogy melyik pontot nagyjából hol valósítottam meg :)
 
-## Development server
+###### Apró megjegyzés, hogy a favourite komponens az igazából a recept hozzáadásért felelős, a név egy kicsit megtévesztő lehet, csak nem volt kedvem szórakozni azzal, hogy újracsináljam a neve miatt 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Fordítási, futási hiba nincs
+  * Nekem nem volt
 
-## Code scaffolding
+## Firebase Hosting URL
+  * Itt a link: https://webfejl-projekt.web.app/main
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Adatmodell definiálása
+  * app/shared/models mappában van 3 db
+  * ezeket használom a firebases feltöltéshez
 
-## Build
+## Alkalmazás felbontása
+  * szerintem ez megvan
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Reszponzív, mobil first felület
+  * hát ezzel nem igazán foglalkoztam
+  * böngészőben még értelmesen néz ki, mobilos felületen nem igazán
 
-## Running unit tests
+## Legalább 2 különböző attribútum direktíva
+  * [ngStyle] a forum.component.html-ben
+  * [ngClass] a main.component.html-ben
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Legalább 2 különböző strukturális direktíva
+  * *ngFor és *ngIf van pl a main.component.html-ben de ezen kívül máshol is van
 
-## Running end-to-end tests
+## Adatátadás szülő és gyerek komponensek között
+  * a menu.component és az app.component között csináltam @Inputot és @outputot is
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Legalább 10 különböző Material elem helyes használata
+  * Használtam egy csomó fajtát, szinte mindegyik .html-ben van
+  * talán megvan a 10
 
-## Further help
+## Adatbevitel Angular form-ok segítségével
+  * a bejelentkezés, regisztráció, fórum hozzászólás, recept feltöltés azzal van megvalósítva
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# WebfejlUK" 
+## Legalább 1 saját pipe osztály
+  * az app/shared/pipes-ben van egy date-format-os, azt használom a fórum hozzászólásainál
+
+## Legalább 2 különböző Lifecycle Hook használata:
+  * ngOnInit-et használok csak pl. forum.component.ts-ben
+
+## CRUD műveletek mindegyike megvalósult:
+  * Update-t azt sehol se valósítottam meg
+  * CRD mindegyike meg van valósítva pl. a recipe.service.ts-ben
+
+## CRUD service-ekben
+  * az app/shared/services-en belül vannak az ehhez tartozó servicek
+
+## Firestore adatbázis használatal
+  * Azt használok, serviceken belül látszódik
+
+## Legalább 2 komplex firestore lekérdezés
+  * recipe.service.ts-ben a readByUserId method-ban van where feltétel
+  * a comment.service.ts-ben a read method-ban van orderBy rendezés
+
+## Legalább 4 különböző route
+  * app-routing.module.ts-ben ott vannak
+
+## Legalább 2 route levédése AuthGuard-dal
+  * app-routing.module.ts-ben a profile és az addRecipe le van védve
+  * szerintem van is értelme
+
+
+
