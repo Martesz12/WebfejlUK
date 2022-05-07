@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { FavouriteRoutingModule } from './favourite-routing.module';
 import {FavouriteComponent} from "./favourite.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -11,7 +15,11 @@ import {FavouriteComponent} from "./favourite.component";
   ],
   imports: [
     CommonModule,
-    FavouriteRoutingModule
+    FavouriteRoutingModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule
   ]
 })
 export class FavouriteModule { }

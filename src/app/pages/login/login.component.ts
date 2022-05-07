@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   login(){
       this.authService.login(this.email.value, this.password.value).then(cred => {
-        this.router.navigateByUrl('/main')
+        this.router.navigateByUrl('/main');
       }).catch(error => {
         console.error(error);
       });

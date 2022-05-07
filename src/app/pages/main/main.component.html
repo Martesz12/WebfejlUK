@@ -1,117 +1,48 @@
 <div class="main_component">
   <div class="div-flex">
     <h1>Home page: Utca Konyha</h1>
-    <div style="display: flex;">
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
 
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
+    <div *ngFor="let recipe of recipes; let i = index;">
+      <div style="display: flex;">
+        <mat-card *ngIf="i !== 0 && i*3-3 < recipes.length" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-3) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i*3-3].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i*3-3].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i*3-3].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
 
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
-  </div>
+        <mat-card *ngIf="i*3-2 < recipes.length && i !== 0" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-2) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i*3-2].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i*3-2].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i*3-2].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
 
-    <div style="display: flex;">
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
-
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
-
-      <mat-card style="flex: 1 1 auto;" class="example-card">
-        <mat-card-header>
-          <mat-card-title>Sajtos babkamuffin</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="https://streetkitchen.hu/wp-content/uploads/2022/04/sajtos-babka-muffin-tiktok-2s-1618x855.png.webp" alt="babka">
-        <mat-card-content>
-          <p>
-            Nekem a babka valamiért a húsvéthoz köthető leginkább, ezért mindenképpen szerettem volna, ha most is felkerül az asztalra valamilyen formában. Ez a sós sajtos verzió tuti befutó lehet a sonka mellé.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary">Recept</button>
-          <button mat-raised-button color="primary">Kedvenc</button>
-        </mat-card-actions>
-      </mat-card>
+        <mat-card *ngIf="i*3-1 < recipes.length && i !== 0" style="flex: 1 1 auto;" class="example-card" [ngClass]="(i*3-1) % 2 === 0 ? 'card-even' : 'card-odd'">
+          <mat-card-header>
+            <mat-card-title>{{recipes[i*3-1].name}}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{recipes[i*3-1].short_description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="toRecipe(recipes[i*3-1].id)">Recept</button>
+          </mat-card-actions>
+        </mat-card>
+      </div >
     </div>
+
+
+
 </div>
 </div>
-
-
-<!-- navigálás HTML-ből
-      <button (click)="navigateToRecipe" [routerLink]="'/recipe'"
-      6. gyakorlat 53. perc kb
-  -->
-
-
-<!--  #valtozo-nev   lokális változó a HTML-en belül
-      használata: <img [src]="'mappa/' + valtozo-nev + '.jpg'" />   ez így egy input direktíva
-      vagy:       <img class={{valtozo-nev.value}} />  ez így beágyazás
-      (change)="reload()" újratölti változáskor kell a .ts-ben egy reload() fgv.
--->

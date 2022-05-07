@@ -18,6 +18,7 @@ export class UserService {
   read(){
 
   }
+
   getById(id: string){
     return this.afs.collection<User>(this.collectionName).doc(id).valueChanges();
   }

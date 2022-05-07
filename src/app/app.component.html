@@ -17,7 +17,7 @@
           <li *ngIf="!(loggedInUser)"><a routerLink="/login">Bejelentkezés</a></li>
           <li *ngIf="!(loggedInUser)"><a routerLink="/register">Regisztráció</a></li>
           <li *ngIf="(loggedInUser)"><a routerLink="/profile">Profil</a></li>
-          <li *ngIf="(loggedInUser)"><a routerLink="/favourite">Kedvencek</a></li>
+          <li *ngIf="(loggedInUser)"><a routerLink="/addRecipe">Recept hozzáadása</a></li>
           <li *ngIf="(loggedInUser)"><a routerLink="/login" (click)="logout()">Kijelentkezés</a></li>
         </ul>
       </div>

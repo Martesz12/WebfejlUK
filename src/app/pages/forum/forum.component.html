@@ -1,6 +1,6 @@
 <div class="main_component">
   <div class="div-flex">
-    <form [formGroup]="commentsForm" (ngSubmit)="addComment()">
+    <form *ngIf="loggedIn === 1" [formGroup]="commentsForm" (ngSubmit)="addComment()">
       <mat-form-field>
         <mat-label for="comment">Hozzászólás szövege: </mat-label>
         <textarea matInput rows="10" cols="80" type="text" id="comment" formControlName="comment"></textarea>

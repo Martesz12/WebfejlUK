@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'recipe',
     loadChildren: () => import('./pages/recipe/recipe.module').then(m => m.RecipeModule)
   },
-  { path: 'favourite',
+  { path: 'addRecipe',
     loadChildren: () => import('./pages/favourite/favourite.module').then(m => m.FavouriteModule),
     canActivate: [AuthGuard]
   },

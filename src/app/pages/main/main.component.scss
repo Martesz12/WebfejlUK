@@ -18,7 +18,10 @@ button{
   margin-left: 40px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.card-even{
+  background-color: lightslategrey;
+}
+
+.card-odd{
+  background-color: mediumpurple;
 }

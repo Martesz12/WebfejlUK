@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RecipeService} from "../../shared/services/recipe.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  recipes: Array<any> = [];
+
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit(): void {
+    this.recipeService.read().subscribe(recipes => {
+      this.recipes = recipes;
+    });
   }
 
+  toRecipe(id: string) {
+    localStorage.setItem('recipe', id);
+    this.router.navigateByUrl('/recipe');
+  }
 }

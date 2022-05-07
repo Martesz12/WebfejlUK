@@ -16,6 +16,7 @@ export class ForumComponent implements OnInit, OnChanges {
   commentObject: any = {};
   comments: Array<any> = [];
   user?: User;
+  loggedIn = 0;
 
   commentsForm = new FormGroup({
     username: new FormControl(''),
@@ -27,8 +28,13 @@ export class ForumComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log("oninit benne");
+    this.commentService.read().subscribe(comments => {
+      this.comments = comments;
+    });
+
     const user = JSON.parse(localStorage.getItem('user') as string) as firebase.default.User;
     this.userService.getById(user.uid).subscribe(data => {
+      this.loggedIn = 1;
       this.user = data;
       this.commentsForm.get('username')?.setValue(this.user?.username);
     }, error => {
@@ -36,14 +42,14 @@ export class ForumComponent implements OnInit, OnChanges {
     });
   }
 
-  //TODO ez valamiért nem mükszik
-  //TODO dátum szerinti időrendben jöjjenek be a kommentek
+
   ngOnChanges(): void{
     console.log("changebe benne");
     this.commentService.read().subscribe(comments => {
       this.comments = comments;
     });
   }
+
 
   addComment() {
     if(this.commentsForm.get('comment')){

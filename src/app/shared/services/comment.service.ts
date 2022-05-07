@@ -17,6 +17,6 @@ export class CommentService {
   }
 
   read(){
-    return this.afs.collection<Comment>(this.collectionName).valueChanges();
+    return this.afs.collection<Comment>(this.collectionName, ref => ref.orderBy("date","desc")).valueChanges();
   }
 }
