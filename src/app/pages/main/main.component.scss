@@ -13,6 +13,12 @@ button{
   margin: 10px;
 }
 
+h1{
+  text-align: center;
+  font-size: xxx-large;
+  margin: 30px;
+}
+
 .example-card {
   max-width: 400px;
   margin-left: 40px;
@@ -24,4 +30,9 @@ button{
 
 .card-odd{
   background-color: mediumpurple;
+}
+
+.foodImage{
+  max-width: 400px;
+  max-height: 200px;
 }

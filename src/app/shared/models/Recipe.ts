@@ -4,5 +4,6 @@ export interface Recipe{
   name: string;
   short_description: string;
   recipe: string;
+  image: string;
   ingredients: object;
 }

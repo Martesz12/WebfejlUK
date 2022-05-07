@@ -15,6 +15,7 @@ export class FavouriteComponent implements OnInit {
     name: new FormControl(''),
     short_description: new FormControl(''),
     recipe: new FormControl(''),
+    image: new FormControl(''),
     ingredients: new FormControl('')
   });
 
@@ -34,6 +35,7 @@ export class FavouriteComponent implements OnInit {
       name: this.recipeForm.get('name')?.value,
       short_description: this.recipeForm.get('short_description')?.value,
       recipe: this.recipeForm.get('recipe')?.value,
+      image: this.recipeForm.get('image')?.value,
       ingredients: this.recipeForm.get('ingredients')?.value.split(",")
     };
     this.recipeService.create(recipe).then(_ => {

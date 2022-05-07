@@ -15,8 +15,12 @@
         <textarea matInput rows="10" cols="80" type="text" id="recipe" formControlName="recipe"></textarea>
       </mat-form-field>
       <mat-form-field>
+        <mat-label for="image">Kép url link: </mat-label>
+        <input matInput rows="10" cols="80" type="text" id="image" formControlName="image">
+      </mat-form-field>
+      <mat-form-field>
         <mat-label for="ingredients">Hozzávalók (vesszővel elválasztva): </mat-label>
-        <textarea matInput rows="2" cols="80" type="text" id="ingredients" formControlName="ingredients"></textarea>
+        <textarea matInput rows="2" cols="80" type="text" id="ingredients" placeholder="2 tojás,10dk liszt,5dl tej" formControlName="ingredients"></textarea>
       </mat-form-field>
       <div>
         <button mat-raised-button color="primary" type="submit">Feltöltés</button>
