@@ -1,6 +1,6 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import { Comment } from '../../shared/models/Comment';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {UserService} from "../../shared/services/user.service";
 import {User} from "../../shared/models/User";
@@ -28,6 +28,7 @@ export class ForumComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     console.log("oninit benne");
+    this.commentsForm.get('comment')?.addValidators(Validators.required);
     this.commentService.read().subscribe(comments => {
       this.comments = comments;
     });
@@ -52,7 +53,7 @@ export class ForumComponent implements OnInit, OnChanges {
 
 
   addComment() {
-    if(this.commentsForm.get('comment')){
+    if(this.commentsForm.get('comment') && this.commentsForm.valid){
       const comment: Comment = {
         id: "",
         username: this.commentsForm.get('username')?.value,
