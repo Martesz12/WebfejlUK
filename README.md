@@ -3,6 +3,7 @@
 Szeretnék egy kis segítséget adni a pontozáshoz, leírtam, hogy melyik pontot nagyjából hol valósítottam meg :)
 
 ###### Apró megjegyzés, hogy a favourite komponens az igazából a recept hozzáadásért felelős, a név egy kicsit megtévesztő lehet, csak nem volt kedvem szórakozni azzal, hogy újracsináljam a neve miatt 
+###### Valamint a regisztráció során legalább 6 karakter legyen a jelszavadban, különben sír, hogy nem jó
 
 ## Fordítási, futási hiba nincs
   * Nekem nem volt
