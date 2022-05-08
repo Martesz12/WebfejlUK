@@ -4,6 +4,7 @@ Szeretnék egy kis segítséget adni a pontozáshoz, leírtam, hogy melyik ponto
 
 ###### Apró megjegyzés, hogy a favourite komponens az igazából a recept hozzáadásért felelős, a név egy kicsit megtévesztő lehet, csak nem volt kedvem szórakozni azzal, hogy újracsináljam a neve miatt 
 ###### Valamint a regisztráció során legalább 6 karakter legyen a jelszavadban, különben sír, hogy nem jó
+###### Bármi probléma esetén keress fel nyugodtan (Bene Martin, DU0038, Büne#6780)
 
 ## Fordítási, futási hiba nincs
   * Nekem nem volt
